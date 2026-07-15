@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@supabase/supabase-js": "^2.110.6",
     "i18next": "^26.3.6",
     "lucide-react": "^1.24.0",

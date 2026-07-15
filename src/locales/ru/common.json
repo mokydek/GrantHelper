@@ -1,3 +1,27 @@
 {
-  "appName": "GrantHelper"
+  "app": {
+    "name": "GrantHelper",
+    "tagline": "Гранты, подобранные под ваш реальный профиль"
+  },
+  "actions": {
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "continue": "Продолжить",
+    "back": "Назад",
+    "signIn": "Войти",
+    "signUp": "Зарегистрироваться",
+    "signOut": "Выйти",
+    "getStarted": "Начать"
+  },
+  "nav": {
+    "dashboard": "Панель",
+    "grants": "Гранты",
+    "profile": "Профиль",
+    "documents": "Документы",
+    "applications": "Заявки"
+  },
+  "language": {
+    "en": "English",
+    "ru": "Русский"
+  }
 }

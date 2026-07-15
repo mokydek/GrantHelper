@@ -7,6 +7,7 @@ const LoginPage = lazy(() => import('./frontend/pages/auth/LoginPage'))
 const SignupPage = lazy(() => import('./frontend/pages/auth/SignupPage'))
 const AppLayout = lazy(() => import('./frontend/layouts/AppLayout'))
 const DashboardPage = lazy(() => import('./frontend/pages/DashboardPage'))
+const UiKitPage = lazy(() => import('./frontend/pages/UiKitPage'))
 
 // A single top level Suspense boundary wraps every lazy route.
 function RootSuspense() {
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
       { path: '/', element: <LandingPage /> },
       { path: '/login', element: <LoginPage /> },
       { path: '/signup', element: <SignupPage /> },
+      { path: '/ui-kit', element: <UiKitPage /> },
       {
         path: '/app',
         element: <AppLayout />,
