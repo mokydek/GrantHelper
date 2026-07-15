@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/*
+  GrantHelper design tokens. Light theme only, strict monochrome.
+  Black, white and neutral grays only. No accent color, no gradients.
+*/
+:root {
+  --color-bg: #FFFFFF;
+  --color-fg: #0A0A0A;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+  --radius: 2px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
