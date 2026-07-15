@@ -23,5 +23,62 @@
   "language": {
     "en": "English",
     "ru": "Русский"
+  },
+  "landing": {
+    "hero": {
+      "badge": "Grant matching platform",
+      "title": "Grants that fit your real profile",
+      "subtitle": "Add your GPA, test scores, activities and documents. GrantHelper checks you against real eligibility requirements and shows exactly where you stand."
+    },
+    "matchPreview": {
+      "title": "Your matches",
+      "count": "3 of 24",
+      "basis": "Based on GPA 3.6, IELTS 7.0, 120 volunteer hours",
+      "providers": {
+        "nuffic": "Nuffic",
+        "chevening": "UK Government",
+        "daad": "DAAD"
+      }
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "step1": {
+        "title": "Build your profile",
+        "text": "GPA, SAT, IELTS, volunteering, projects and documents in one place."
+      },
+      "step2": {
+        "title": "Get matched",
+        "text": "Every grant has structured requirements and we compare them with your numbers."
+      },
+      "step3": {
+        "title": "Apply with confidence",
+        "text": "Track deadlines, statuses and required documents for each application."
+      }
+    },
+    "features": {
+      "profile": {
+        "title": "Academic profile",
+        "text": "Store GPA and every test score with dates."
+      },
+      "eligibility": {
+        "title": "Eligibility engine",
+        "text": "See eligible, borderline and not eligible grants instantly."
+      },
+      "documents": {
+        "title": "Documents and essays",
+        "text": "Keep drafts and final files ready for submission."
+      },
+      "tracker": {
+        "title": "Deadline tracker",
+        "text": "Never miss an application window again."
+      }
+    },
+    "cta": {
+      "title": "Stop guessing. Start matching.",
+      "button": "Create your profile"
+    },
+    "footer": {
+      "copyright": "© 2026 GrantHelper"
+    }
   }
 }
