@@ -92,6 +92,69 @@
       "browse": "Смотреть гранты"
     }
   },
+  "documents": {
+    "writeEssay": "Написать эссе",
+    "uploadFile": "Загрузить файл",
+    "upload": "Загрузить",
+    "cancel": "Отмена",
+    "docTypes": {
+      "essay": "Эссе",
+      "motivation_letter": "Мотивационное письмо",
+      "recommendation_letter": "Рекомендательное письмо",
+      "transcript": "Транскрипт",
+      "cv": "Резюме",
+      "passport": "Паспорт",
+      "certificate": "Сертификат",
+      "other": "Другое"
+    },
+    "status": {
+      "draft": "Черновик",
+      "ready": "Готово"
+    },
+    "filters": {
+      "all": "Все",
+      "essays": "Эссе",
+      "files": "Файлы",
+      "statusAll": "Все статусы"
+    },
+    "form": {
+      "titlePlaceholder": "Название документа",
+      "docType": "Тип"
+    },
+    "validation": {
+      "tooLarge": "Файл больше 10 МБ",
+      "unsupported": "Этот тип файла не поддерживается"
+    },
+    "error": "Произошла ошибка. Попробуйте снова",
+    "actions": {
+      "edit": "Изменить",
+      "download": "Скачать",
+      "delete": "Удалить"
+    },
+    "remove": {
+      "confirm": "Удалить этот документ?",
+      "cancel": "Отмена",
+      "remove": "Удалить"
+    },
+    "empty": {
+      "title": "Пока нет документов"
+    },
+    "editor": {
+      "back": "Все документы",
+      "titlePlaceholder": "Название эссе",
+      "counts": "{{words}} слов · {{characters}} символов",
+      "save": "Сохранить",
+      "saved": "Сохранено",
+      "notFound": "Документ не найден",
+      "discard": "Отменить несохранённые изменения?",
+      "stay": "Остаться",
+      "discardConfirm": "Отменить"
+    },
+    "readiness": {
+      "noEssay": "Нет готового эссе",
+      "noRecommendation": "Нет готовой рекомендации"
+    }
+  },
   "auth": {
     "emailLabel": "Электронная почта",
     "passwordLabel": "Пароль",

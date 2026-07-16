@@ -21,6 +21,7 @@ import {
   createApplication,
   getMyApplicationByGrantId,
 } from '../../backend/services/applicationsService'
+import { listMyDocuments } from '../../backend/services/documentsService'
 import type { CriterionState } from '../../lib/matching/types'
 
 const STATE_ICON: Record<CriterionState, LucideIcon> = {
@@ -40,6 +41,32 @@ export default function GrantDetailPage() {
   const [added, setAdded] = useState(false)
   const [adding, setAdding] = useState(false)
   const [addError, setAddError] = useState<string | null>(null)
+  const [readyEssay, setReadyEssay] = useState(false)
+  const [readyRecommendation, setReadyRecommendation] = useState(false)
+
+  useEffect(() => {
+    let active = true
+    listMyDocuments()
+      .then((docs) => {
+        if (!active) return
+        setReadyEssay(
+          docs.some(
+            (d) =>
+              (d.doc_type === 'essay' || d.doc_type === 'motivation_letter') &&
+              d.status === 'ready',
+          ),
+        )
+        setReadyRecommendation(
+          docs.some(
+            (d) => d.doc_type === 'recommendation_letter' && d.status === 'ready',
+          ),
+        )
+      })
+      .catch(() => {})
+    return () => {
+      active = false
+    }
+  }, [])
 
   useEffect(() => {
     let active = true
@@ -214,12 +241,20 @@ export default function GrantDetailPage() {
               <li className="flex items-center gap-2 text-sm">
                 <FileText size={16} aria-hidden="true" />
                 {t('grants.documents.essay')}
+                <DocumentReadiness
+                  ready={readyEssay}
+                  hint={t('documents.readiness.noEssay')}
+                />
               </li>
             )}
             {requiredDocuments.recommendation && (
               <li className="flex items-center gap-2 text-sm">
                 <FileText size={16} aria-hidden="true" />
                 {t('grants.documents.recommendation')}
+                <DocumentReadiness
+                  ready={readyRecommendation}
+                  hint={t('documents.readiness.noRecommendation')}
+                />
               </li>
             )}
           </ul>
@@ -248,5 +283,21 @@ export default function GrantDetailPage() {
         {addError && <p className="text-[13px] text-fg">{addError}</p>}
       </div>
     </div>
+  )
+}
+
+// Informational readiness marker for a required document. Does not affect score.
+function DocumentReadiness({ ready, hint }: { ready: boolean; hint: string }) {
+  if (ready) {
+    return <Check size={16} aria-hidden="true" className="text-fg" />
+  }
+  return (
+    <Link
+      to="/app/documents"
+      className="inline-flex items-center gap-1 text-[13px] text-muted transition-colors hover:text-fg"
+    >
+      <HelpCircle size={16} aria-hidden="true" />
+      {hint}
+    </Link>
   )
 }

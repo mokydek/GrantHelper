@@ -92,6 +92,69 @@
       "browse": "Browse grants"
     }
   },
+  "documents": {
+    "writeEssay": "Write essay",
+    "uploadFile": "Upload file",
+    "upload": "Upload",
+    "cancel": "Cancel",
+    "docTypes": {
+      "essay": "Essay",
+      "motivation_letter": "Motivation letter",
+      "recommendation_letter": "Recommendation letter",
+      "transcript": "Transcript",
+      "cv": "CV",
+      "passport": "Passport",
+      "certificate": "Certificate",
+      "other": "Other"
+    },
+    "status": {
+      "draft": "Draft",
+      "ready": "Ready"
+    },
+    "filters": {
+      "all": "All",
+      "essays": "Essays",
+      "files": "Files",
+      "statusAll": "All statuses"
+    },
+    "form": {
+      "titlePlaceholder": "Document title",
+      "docType": "Type"
+    },
+    "validation": {
+      "tooLarge": "File is larger than 10 MB",
+      "unsupported": "This file type is not supported"
+    },
+    "error": "Something went wrong. Please try again",
+    "actions": {
+      "edit": "Edit",
+      "download": "Download",
+      "delete": "Delete"
+    },
+    "remove": {
+      "confirm": "Remove this document?",
+      "cancel": "Cancel",
+      "remove": "Remove"
+    },
+    "empty": {
+      "title": "No documents yet"
+    },
+    "editor": {
+      "back": "All documents",
+      "titlePlaceholder": "Essay title",
+      "counts": "{{words}} words · {{characters}} characters",
+      "save": "Save",
+      "saved": "Saved",
+      "notFound": "Document not found",
+      "discard": "Discard unsaved changes?",
+      "stay": "Stay",
+      "discardConfirm": "Discard"
+    },
+    "readiness": {
+      "noEssay": "No ready essay yet",
+      "noRecommendation": "No ready recommendation yet"
+    }
+  },
   "auth": {
     "emailLabel": "Email",
     "passwordLabel": "Password",

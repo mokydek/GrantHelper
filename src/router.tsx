@@ -11,6 +11,7 @@ const GrantsPage = lazy(() => import('./frontend/pages/GrantsPage'))
 const GrantDetailPage = lazy(() => import('./frontend/pages/GrantDetailPage'))
 const ProfilePage = lazy(() => import('./frontend/pages/ProfilePage'))
 const DocumentsPage = lazy(() => import('./frontend/pages/DocumentsPage'))
+const EssayEditorPage = lazy(() => import('./frontend/pages/EssayEditorPage'))
 const ApplicationsPage = lazy(() => import('./frontend/pages/ApplicationsPage'))
 const OnboardingPage = lazy(() => import('./frontend/pages/OnboardingPage'))
 const UiKitPage = lazy(() => import('./frontend/pages/UiKitPage'))
@@ -53,6 +54,8 @@ export const router = createBrowserRouter([
               { path: 'grants/:grantId', element: <GrantDetailPage /> },
               { path: 'profile', element: <ProfilePage /> },
               { path: 'documents', element: <DocumentsPage /> },
+              { path: 'documents/new', element: <EssayEditorPage /> },
+              { path: 'documents/:id/edit', element: <EssayEditorPage /> },
               { path: 'applications', element: <ApplicationsPage /> },
             ],
           },
