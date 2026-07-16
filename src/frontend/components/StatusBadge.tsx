@@ -11,14 +11,16 @@ const STYLES: Record<MatchStatus, string> = {
 
 export default function StatusBadge({ status }: { status: MatchStatus }) {
   const { t } = useTranslation()
+  const label = t(`grants.status.${status}`)
   return (
     <span
+      title={label}
       className={cn(
         'inline-flex items-center rounded-base px-2 py-0.5 text-[11px] font-mono uppercase tracking-[0.05em]',
         STYLES[status],
       )}
     >
-      {t(`grants.status.${status}`)}
+      {label}
     </span>
   )
 }

@@ -3,8 +3,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { MessageSquare, Trash2, TriangleAlert } from 'lucide-react'
 import { Button, Card, Select, Textarea } from '../components/ui'
+import Loading from '../components/Loading'
 import { daysUntil, formatDate } from '../../lib/dates'
 import { cn } from '../../lib/cn'
+import { usePageTitle } from '../../lib/usePageTitle'
 import {
   deleteApplication,
   listMyApplications,
@@ -30,6 +32,7 @@ const STATUS_OPTIONS: ApplicationStatus[] = [
 
 export default function ApplicationsPage() {
   const { t } = useTranslation()
+  usePageTitle(t('nav.applications'))
   const navigate = useNavigate()
   const [apps, setApps] = useState<ApplicationWithGrant[] | null>(null)
   const [actionError, setActionError] = useState<string | null>(null)
@@ -56,7 +59,7 @@ export default function ApplicationsPage() {
     setApps((prev) => (prev ? prev.filter((a) => a.id !== id) : prev))
 
   if (apps === null) {
-    return <p className="text-muted">Loading</p>
+    return <Loading />
   }
 
   if (apps.length === 0) {
@@ -254,6 +257,7 @@ function ApplicationRow({
               <div className="w-36">
                 <Select
                   size="sm"
+                  aria-label={t('common.status')}
                   value={app.status}
                   onChange={(event) =>
                     handleStatusChange(event.target.value as ApplicationStatus)
@@ -291,6 +295,7 @@ function ApplicationRow({
         <div className="space-y-2 border-t border-border pt-3">
           <Textarea
             rows={3}
+            aria-label={t('applications.notes.toggle')}
             value={notesText}
             onChange={(event) => setNotesText(event.target.value)}
             placeholder={t('applications.notes.placeholder')}

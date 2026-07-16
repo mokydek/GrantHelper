@@ -7,6 +7,8 @@ import StatusBadge from '../components/StatusBadge'
 import { useMatches } from '../hooks/useMatches'
 import { daysUntil, formatDate } from '../../lib/dates'
 import { cn } from '../../lib/cn'
+import { usePageTitle } from '../../lib/usePageTitle'
+import Loading from '../components/Loading'
 import type { GrantMatch, MatchStatus } from '../../lib/matching/types'
 import type { DegreeLevel, FundingType } from '../../backend/types/database'
 
@@ -38,6 +40,7 @@ function deadlineRank(deadline: string | null): number {
 
 export default function GrantsPage() {
   const { t, i18n } = useTranslation()
+  usePageTitle(t('nav.grants'))
   const { matches, loading } = useMatches()
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -153,6 +156,7 @@ export default function GrantsPage() {
           />
           <Input
             className="pl-9!"
+            aria-label={t('grants.searchPlaceholder')}
             placeholder={t('grants.searchPlaceholder')}
             value={q}
             onChange={(event) => setParam('q', event.target.value)}
@@ -184,7 +188,11 @@ export default function GrantsPage() {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <Select value={country} onChange={(e) => setCountry(e.target.value)}>
+          <Select
+            aria-label={t('grants.filters.country')}
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          >
             <option value="all">
               {t('grants.filters.country')}: {t('grants.filters.all')}
             </option>
@@ -195,7 +203,11 @@ export default function GrantsPage() {
             ))}
           </Select>
 
-          <Select value={degree} onChange={(e) => setDegree(e.target.value)}>
+          <Select
+            aria-label={t('grants.filters.degree')}
+            value={degree}
+            onChange={(e) => setDegree(e.target.value)}
+          >
             <option value="all">
               {t('grants.filters.degree')}: {t('grants.filters.all')}
             </option>
@@ -206,7 +218,11 @@ export default function GrantsPage() {
             ))}
           </Select>
 
-          <Select value={funding} onChange={(e) => setFunding(e.target.value)}>
+          <Select
+            aria-label={t('grants.filters.funding')}
+            value={funding}
+            onChange={(e) => setFunding(e.target.value)}
+          >
             <option value="all">
               {t('grants.filters.funding')}: {t('grants.filters.all')}
             </option>
@@ -218,6 +234,7 @@ export default function GrantsPage() {
           </Select>
 
           <Select
+            aria-label={t('grants.sort.label')}
             value={sort}
             onChange={(e) => setSort(e.target.value as SortKey)}
           >
@@ -229,7 +246,7 @@ export default function GrantsPage() {
       </div>
 
       {loading && matches === null ? (
-        <p className="text-muted">Loading</p>
+        <Loading />
       ) : visible.length === 0 ? (
         <div className="flex flex-col items-center gap-4 py-16 text-center">
           <p className="text-muted">{t('grants.empty.title')}</p>

@@ -11,7 +11,7 @@ export interface SelectProps
 
 const base =
   'w-full bg-bg text-fg rounded-base border border-border appearance-none ' +
-  'focus-visible:outline-none focus-visible:border-fg ' +
+  'focus-visible:border-fg ' +
   'disabled:opacity-50 disabled:pointer-events-none'
 
 const sizes: Record<SelectSize, string> = {

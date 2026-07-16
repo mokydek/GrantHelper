@@ -3,7 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowLeft } from 'lucide-react'
 import { Button, Input, Select } from '../components/ui'
+import Loading from '../components/Loading'
 import { cn } from '../../lib/cn'
+import { usePageTitle } from '../../lib/usePageTitle'
 import {
   createEssay,
   getMyDocumentById,
@@ -134,8 +136,10 @@ export default function EssayEditorPage() {
     else navigate('/app/documents')
   }
 
+  usePageTitle(title.trim() || t('documents.writeEssay'))
+
   if (loading) {
-    return <p className="text-muted">Loading</p>
+    return <Loading />
   }
 
   if (notFound) {
@@ -190,11 +194,13 @@ export default function EssayEditorPage() {
 
       <div className="grid gap-3 sm:grid-cols-[1fr_13rem]">
         <Input
+          aria-label={t('documents.editor.titlePlaceholder')}
           placeholder={t('documents.editor.titlePlaceholder')}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <Select
+          aria-label={t('documents.form.docType')}
           value={docType}
           onChange={(e) => setDocType(e.target.value as EssayDocType)}
         >
@@ -208,7 +214,8 @@ export default function EssayEditorPage() {
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
-        className="min-h-[480px] w-full resize-y rounded-base border border-border bg-bg p-4 font-sans text-base text-fg focus-visible:border-fg focus-visible:outline-none"
+        aria-label={t('documents.editor.content')}
+        className="min-h-[480px] w-full resize-y rounded-base border border-border bg-bg p-4 font-sans text-base text-fg focus-visible:border-fg"
       />
 
       <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border pt-4">

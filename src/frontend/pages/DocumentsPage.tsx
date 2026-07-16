@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Download, FileText, PenLine, Trash2 } from 'lucide-react'
 import { Badge, Button, Card, Input, Select } from '../components/ui'
+import Loading from '../components/Loading'
 import { formatDate } from '../../lib/dates'
+import { usePageTitle } from '../../lib/usePageTitle'
 import {
   deleteDocument,
   getSignedUrl,
@@ -32,6 +34,7 @@ type StatusFilter = 'all' | DocumentStatus
 
 export default function DocumentsPage() {
   const { t } = useTranslation()
+  usePageTitle(t('nav.documents'))
   const navigate = useNavigate()
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -117,7 +120,7 @@ export default function DocumentsPage() {
   }
 
   if (documents === null) {
-    return <p className="text-muted">Loading</p>
+    return <Loading />
   }
 
   const visible = documents.filter((doc) => {
@@ -165,11 +168,13 @@ export default function DocumentsPage() {
         <Card className="space-y-4">
           <div className="grid gap-3 sm:grid-cols-2">
             <Input
+              aria-label={t('documents.form.titlePlaceholder')}
               placeholder={t('documents.form.titlePlaceholder')}
               value={uploadTitle}
               onChange={(e) => setUploadTitle(e.target.value)}
             />
             <Select
+              aria-label={t('documents.form.docType')}
               value={uploadDocType}
               onChange={(e) => setUploadDocType(e.target.value as DocType)}
             >
@@ -235,6 +240,7 @@ export default function DocumentsPage() {
             <div className="w-40">
               <Select
                 size="sm"
+                aria-label={t('documents.filters.statusAll')}
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value as StatusFilter)}
               >
@@ -368,6 +374,7 @@ function DocumentRow({
             <div className="w-28">
               <Select
                 size="sm"
+                aria-label={t('common.status')}
                 value={doc.status}
                 onChange={(e) =>
                   handleStatusChange(e.target.value as DocumentStatus)

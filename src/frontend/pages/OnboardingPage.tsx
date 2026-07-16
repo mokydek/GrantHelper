@@ -12,7 +12,9 @@ import { updateMyProfile } from '../../backend/services/profileService'
 import { listMyScores } from '../../backend/services/testScoresService'
 import { listMyActivities } from '../../backend/services/activitiesService'
 import type { Activity, TestScore } from '../../backend/types/database'
+import Loading from '../components/Loading'
 import { cn } from '../../lib/cn'
+import { usePageTitle } from '../../lib/usePageTitle'
 
 const STEP_KEYS = ['basics', 'academics', 'activities', 'review'] as const
 
@@ -180,6 +182,7 @@ export default function OnboardingPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { profile, loading, refresh } = useProfile()
+  usePageTitle(t('actions.getStarted'))
 
   const [step, setStep] = useState(1)
   const [saving, setSaving] = useState(false)
@@ -189,9 +192,7 @@ export default function OnboardingPage() {
   const activitiesRef = useRef<SectionHandle>(null)
 
   if (loading) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">Loading</div>
-    )
+    return <Loading full />
   }
 
   if (profile?.onboarding_completed) {

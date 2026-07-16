@@ -6,10 +6,12 @@ import { signUpWithEmail } from '../../../backend/services/authService'
 import { isValidEmail } from '../../../lib/validation'
 import { authErrorMessage } from './authErrorMessage'
 import AuthShell from './AuthShell'
+import { usePageTitle } from '../../../lib/usePageTitle'
 
 export default function SignupPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  usePageTitle(t('actions.signUp'))
 
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')

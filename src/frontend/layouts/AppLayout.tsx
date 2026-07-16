@@ -5,6 +5,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher'
 import { useAuth } from '../providers/AuthProvider'
 import { useProfile } from '../providers/ProfileProvider'
 import { signOut } from '../../backend/services/authService'
+import Loading from '../components/Loading'
 import { cn } from '../../lib/cn'
 
 const TABS = [
@@ -22,9 +23,7 @@ export default function AppLayout() {
   const { profile, loading } = useProfile()
 
   if (loading) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">Loading</div>
-    )
+    return <Loading full />
   }
 
   // A profile that has not finished onboarding cannot reach the app tabs.

@@ -7,7 +7,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const field =
   'w-full h-10 px-3 bg-bg text-fg text-sm rounded-base border ' +
-  'placeholder:text-muted focus-visible:outline-none focus-visible:border-fg ' +
+  'placeholder:text-muted focus-visible:border-fg ' +
   'disabled:opacity-50 disabled:pointer-events-none'
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(

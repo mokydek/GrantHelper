@@ -1,14 +1,13 @@
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAuth } from '../providers/AuthProvider'
 import { ProfileProvider } from '../providers/ProfileProvider'
+import Loading from './Loading'
 
 export default function ProtectedRoute() {
   const { user, loading } = useAuth()
 
   if (loading) {
-    return (
-      <div className="flex min-h-screen items-center justify-center">Loading</div>
-    )
+    return <Loading full />
   }
 
   if (!user) {

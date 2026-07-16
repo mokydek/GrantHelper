@@ -6,6 +6,7 @@ import BasicsSection from '../components/profile/BasicsSection'
 import AcademicsSection from '../components/profile/AcademicsSection'
 import ActivitiesSection from '../components/profile/ActivitiesSection'
 import type { SectionHandle } from '../components/profile/shared'
+import { usePageTitle } from '../../lib/usePageTitle'
 
 function SavableSection({
   title,
@@ -58,6 +59,7 @@ function SavableSection({
 
 export default function ProfilePage() {
   const { t } = useTranslation()
+  usePageTitle(t('profile.title'))
 
   return (
     <div className="space-y-8">

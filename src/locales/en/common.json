@@ -3,6 +3,19 @@
     "name": "GrantHelper",
     "tagline": "Grants matched to your real profile"
   },
+  "common": {
+    "loading": "Loading",
+    "status": "Status"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you are looking for does not exist",
+    "back": "Go back"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "reload": "Reload"
+  },
   "actions": {
     "save": "Save",
     "cancel": "Cancel",
@@ -142,6 +155,7 @@
     "editor": {
       "back": "All documents",
       "titlePlaceholder": "Essay title",
+      "content": "Essay text",
       "counts": "{{words}} words · {{characters}} characters",
       "save": "Save",
       "saved": "Saved",
@@ -279,6 +293,12 @@
       "incomplete": "Add more data",
       "not_eligible": "Not eligible"
     },
+    "state": {
+      "met": "Met",
+      "close": "Close",
+      "failed": "Not met",
+      "unknown": "Unknown"
+    },
     "pills": {
       "all": "All",
       "eligible": "Eligible",
@@ -293,6 +313,7 @@
       "all": "All"
     },
     "sort": {
+      "label": "Sort",
       "best": "Best match",
       "deadline": "Deadline soonest",
       "name": "Name A to Z"

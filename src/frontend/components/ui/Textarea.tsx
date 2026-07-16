@@ -8,7 +8,7 @@ export interface TextareaProps
 
 const field =
   'w-full min-h-20 px-3 py-2 bg-bg text-fg text-sm rounded-base border ' +
-  'placeholder:text-muted focus-visible:outline-none focus-visible:border-fg ' +
+  'placeholder:text-muted focus-visible:border-fg ' +
   'disabled:opacity-50 disabled:pointer-events-none'
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(

@@ -3,7 +3,7 @@ import { setLanguage, type UiLanguage } from '../../lib/i18n'
 import { cn } from '../../lib/cn'
 
 export default function LanguageSwitcher() {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const current = i18n.language.startsWith('ru') ? 'ru' : 'en'
 
   const item = (lang: UiLanguage, label: string) => (
@@ -11,6 +11,7 @@ export default function LanguageSwitcher() {
       type="button"
       onClick={() => setLanguage(lang)}
       aria-pressed={current === lang}
+      aria-label={t(`language.${lang}`)}
       className={cn(
         'px-2 py-1 text-[13px] font-medium transition-colors',
         current === lang ? 'text-fg' : 'text-muted hover:text-fg',

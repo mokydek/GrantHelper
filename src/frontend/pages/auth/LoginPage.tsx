@@ -6,10 +6,12 @@ import { signInWithEmail } from '../../../backend/services/authService'
 import { isValidEmail } from '../../../lib/validation'
 import { authErrorMessage } from './authErrorMessage'
 import AuthShell from './AuthShell'
+import { usePageTitle } from '../../../lib/usePageTitle'
 
 export default function LoginPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  usePageTitle(t('actions.signIn'))
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

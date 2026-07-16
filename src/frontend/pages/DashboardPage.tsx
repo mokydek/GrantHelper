@@ -15,6 +15,8 @@ import {
 import { computeProfileStrength } from '../../lib/profileStrength'
 import { daysUntil, formatDate } from '../../lib/dates'
 import { cn } from '../../lib/cn'
+import { usePageTitle } from '../../lib/usePageTitle'
+import Loading from '../components/Loading'
 import type { TestScore } from '../../backend/types/database'
 
 const ACTIVE_STATUSES = ['planned', 'in_progress', 'submitted']
@@ -32,6 +34,7 @@ function StatCard({ label, children }: { label: string; children: ReactNode }) {
 
 export default function DashboardPage() {
   const { t, i18n } = useTranslation()
+  usePageTitle(t('nav.dashboard'))
   const { profile } = useProfile()
   const { matches, loading: matchesLoading } = useMatches()
 
@@ -77,7 +80,7 @@ export default function DashboardPage() {
     strength !== null
 
   if (!ready) {
-    return <p className="text-muted">Loading</p>
+    return <Loading />
   }
 
   const firstName = profile.full_name?.trim().split(/\s+/)[0]

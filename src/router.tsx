@@ -1,5 +1,11 @@
 import { lazy, Suspense } from 'react'
-import { createBrowserRouter, Outlet } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  Outlet,
+  type RouteObject,
+} from 'react-router-dom'
+import Loading from './frontend/components/Loading'
+import ScrollToTop from './frontend/components/ScrollToTop'
 
 // Every route component is lazy loaded so each renders as its own JS chunk.
 const LandingPage = lazy(() => import('./landing/LandingPage'))
@@ -14,25 +20,41 @@ const DocumentsPage = lazy(() => import('./frontend/pages/DocumentsPage'))
 const EssayEditorPage = lazy(() => import('./frontend/pages/EssayEditorPage'))
 const ApplicationsPage = lazy(() => import('./frontend/pages/ApplicationsPage'))
 const OnboardingPage = lazy(() => import('./frontend/pages/OnboardingPage'))
-const UiKitPage = lazy(() => import('./frontend/pages/UiKitPage'))
+const NotFoundPage = lazy(() => import('./frontend/pages/NotFoundPage'))
 const GuestRoute = lazy(() => import('./frontend/components/GuestRoute'))
 const ProtectedRoute = lazy(() => import('./frontend/components/ProtectedRoute'))
 
 // A single top level Suspense boundary wraps every lazy route.
 function RootSuspense() {
   return (
-    <Suspense fallback={<div>Loading</div>}>
-      <Outlet />
-    </Suspense>
+    <>
+      <ScrollToTop />
+      <Suspense fallback={<Loading full />}>
+        <Outlet />
+      </Suspense>
+    </>
   )
 }
+
+// The UI kit showcase is a development only tool. The dynamic import lives
+// inside the DEV guard so it is tree shaken out of the production bundle.
+const devOnlyRoutes: RouteObject[] = import.meta.env.DEV
+  ? [
+      {
+        path: '/ui-kit',
+        lazy: async () => ({
+          Component: (await import('./frontend/pages/UiKitPage')).default,
+        }),
+      },
+    ]
+  : []
 
 export const router = createBrowserRouter([
   {
     element: <RootSuspense />,
     children: [
       { path: '/', element: <LandingPage /> },
-      { path: '/ui-kit', element: <UiKitPage /> },
+      ...devOnlyRoutes,
       {
         element: <GuestRoute />,
         children: [
@@ -61,6 +83,7 @@ export const router = createBrowserRouter([
           },
         ],
       },
+      { path: '*', element: <NotFoundPage /> },
     ],
   },
 ])

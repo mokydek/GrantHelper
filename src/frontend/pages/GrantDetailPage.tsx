@@ -22,6 +22,8 @@ import {
   getMyApplicationByGrantId,
 } from '../../backend/services/applicationsService'
 import { listMyDocuments } from '../../backend/services/documentsService'
+import { usePageTitle } from '../../lib/usePageTitle'
+import Loading from '../components/Loading'
 import type { CriterionState } from '../../lib/matching/types'
 
 const STATE_ICON: Record<CriterionState, LucideIcon> = {
@@ -97,11 +99,13 @@ export default function GrantDetailPage() {
     })
   }
 
+  const match = matches?.find((m) => m.grant.id === grantId)
+  usePageTitle(match ? match.grant.name : t('nav.grants'))
+
   if (loading && matches === null) {
-    return <p className="text-muted">Loading</p>
+    return <Loading />
   }
 
-  const match = matches?.find((m) => m.grant.id === grantId)
   if (!match) {
     return (
       <div className="space-y-4 py-16 text-center">
@@ -203,7 +207,8 @@ export default function GrantDetailPage() {
               <li key={criterion.key} className="flex gap-3">
                 <Icon
                   size={18}
-                  aria-hidden="true"
+                  role="img"
+                  aria-label={t(`grants.state.${criterion.state}`)}
                   className={cn('mt-0.5 shrink-0', iconClass)}
                 />
                 <div className="space-y-0.5">
@@ -288,8 +293,16 @@ export default function GrantDetailPage() {
 
 // Informational readiness marker for a required document. Does not affect score.
 function DocumentReadiness({ ready, hint }: { ready: boolean; hint: string }) {
+  const { t } = useTranslation()
   if (ready) {
-    return <Check size={16} aria-hidden="true" className="text-fg" />
+    return (
+      <Check
+        size={16}
+        role="img"
+        aria-label={t('documents.status.ready')}
+        className="text-fg"
+      />
+    )
   }
   return (
     <Link
