@@ -43,6 +43,103 @@
       "generic": "Something went wrong. Please try again"
     }
   },
+  "onboarding": {
+    "steps": {
+      "basics": "Basics",
+      "academics": "Academics",
+      "activities": "Activities",
+      "review": "Review"
+    },
+    "back": "Back",
+    "continue": "Continue",
+    "skip": "Skip for now",
+    "finish": "Finish",
+    "edit": "Edit",
+    "emptyValue": "Not set"
+  },
+  "profile": {
+    "title": "Profile",
+    "comingSoon": "Coming soon",
+    "save": "Save",
+    "saved": "Saved",
+    "selectPlaceholder": "Select",
+    "sections": {
+      "basics": "Basics",
+      "academics": "Academics",
+      "activities": "Activities"
+    },
+    "fields": {
+      "fullName": "Full name",
+      "citizenship": "Citizenship",
+      "dateOfBirth": "Date of birth",
+      "currentLevel": "Current level",
+      "targetLevel": "Target level",
+      "fieldOfStudy": "Field of study",
+      "gpa": "GPA",
+      "gpaScale": "GPA scale"
+    },
+    "levels": {
+      "high_school": "High school",
+      "bachelor": "Bachelor",
+      "master": "Master",
+      "phd": "PhD",
+      "exchange": "Exchange",
+      "summer_school": "Summer school"
+    },
+    "countries": {
+      "Kazakhstan": "Kazakhstan",
+      "Uzbekistan": "Uzbekistan",
+      "Kyrgyzstan": "Kyrgyzstan",
+      "Russia": "Russia",
+      "Ukraine": "Ukraine",
+      "Turkey": "Turkey",
+      "India": "India",
+      "China": "China",
+      "Other": "Other"
+    },
+    "tests": {
+      "heading": "Test scores",
+      "type": "Test type",
+      "score": "Score",
+      "date": "Date",
+      "add": "Add score"
+    },
+    "activities": {
+      "type": "Type",
+      "title": "Title",
+      "organization": "Organization",
+      "hours": "Hours",
+      "hoursShort": "h",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "description": "Description",
+      "add": "Add activity",
+      "to": "to",
+      "total": "Total volunteer hours",
+      "types": {
+        "volunteering": "Volunteering",
+        "project": "Project",
+        "work": "Work",
+        "award": "Award",
+        "olympiad": "Olympiad",
+        "leadership": "Leadership",
+        "research": "Research",
+        "other": "Other"
+      }
+    },
+    "actions": {
+      "delete": "Delete"
+    },
+    "validation": {
+      "fullNameRequired": "Enter your full name",
+      "gpaPositive": "GPA must be greater than zero",
+      "gpaAboveScale": "GPA cannot be above the selected scale",
+      "scoreRange": "Enter a value between {{min}} and {{max}}",
+      "scoreStep": "IELTS scores use 0.5 point steps",
+      "positive": "Enter a positive number",
+      "titleRequired": "Enter a title"
+    }
+  },
   "landing": {
     "hero": {
       "badge": "Grant matching platform",

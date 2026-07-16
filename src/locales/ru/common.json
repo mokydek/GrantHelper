@@ -43,6 +43,103 @@
       "generic": "Произошла ошибка. Попробуйте снова"
     }
   },
+  "onboarding": {
+    "steps": {
+      "basics": "Основное",
+      "academics": "Академические данные",
+      "activities": "Активности",
+      "review": "Проверка"
+    },
+    "back": "Назад",
+    "continue": "Продолжить",
+    "skip": "Пропустить",
+    "finish": "Завершить",
+    "edit": "Изменить",
+    "emptyValue": "Не указано"
+  },
+  "profile": {
+    "title": "Профиль",
+    "comingSoon": "Скоро",
+    "save": "Сохранить",
+    "saved": "Сохранено",
+    "selectPlaceholder": "Выберите",
+    "sections": {
+      "basics": "Основное",
+      "academics": "Академические данные",
+      "activities": "Активности"
+    },
+    "fields": {
+      "fullName": "Полное имя",
+      "citizenship": "Гражданство",
+      "dateOfBirth": "Дата рождения",
+      "currentLevel": "Текущий уровень",
+      "targetLevel": "Целевой уровень",
+      "fieldOfStudy": "Направление обучения",
+      "gpa": "GPA",
+      "gpaScale": "Шкала GPA"
+    },
+    "levels": {
+      "high_school": "Школа",
+      "bachelor": "Бакалавриат",
+      "master": "Магистратура",
+      "phd": "Докторантура",
+      "exchange": "Обмен",
+      "summer_school": "Летняя школа"
+    },
+    "countries": {
+      "Kazakhstan": "Казахстан",
+      "Uzbekistan": "Узбекистан",
+      "Kyrgyzstan": "Кыргызстан",
+      "Russia": "Россия",
+      "Ukraine": "Украина",
+      "Turkey": "Турция",
+      "India": "Индия",
+      "China": "Китай",
+      "Other": "Другое"
+    },
+    "tests": {
+      "heading": "Результаты тестов",
+      "type": "Тип теста",
+      "score": "Балл",
+      "date": "Дата",
+      "add": "Добавить балл"
+    },
+    "activities": {
+      "type": "Тип",
+      "title": "Название",
+      "organization": "Организация",
+      "hours": "Часы",
+      "hoursShort": "ч",
+      "startDate": "Дата начала",
+      "endDate": "Дата окончания",
+      "description": "Описание",
+      "add": "Добавить активность",
+      "to": "до",
+      "total": "Всего волонтёрских часов",
+      "types": {
+        "volunteering": "Волонтёрство",
+        "project": "Проект",
+        "work": "Работа",
+        "award": "Награда",
+        "olympiad": "Олимпиада",
+        "leadership": "Лидерство",
+        "research": "Исследование",
+        "other": "Другое"
+      }
+    },
+    "actions": {
+      "delete": "Удалить"
+    },
+    "validation": {
+      "fullNameRequired": "Введите ваше полное имя",
+      "gpaPositive": "GPA должен быть больше нуля",
+      "gpaAboveScale": "GPA не может превышать выбранную шкалу",
+      "scoreRange": "Введите значение от {{min}} до {{max}}",
+      "scoreStep": "Баллы IELTS идут с шагом 0.5",
+      "positive": "Введите положительное число",
+      "titleRequired": "Введите название"
+    }
+  },
   "landing": {
     "hero": {
       "badge": "Платформа подбора грантов",

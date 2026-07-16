@@ -7,6 +7,11 @@ const LoginPage = lazy(() => import('./frontend/pages/auth/LoginPage'))
 const SignupPage = lazy(() => import('./frontend/pages/auth/SignupPage'))
 const AppLayout = lazy(() => import('./frontend/layouts/AppLayout'))
 const DashboardPage = lazy(() => import('./frontend/pages/DashboardPage'))
+const GrantsPage = lazy(() => import('./frontend/pages/GrantsPage'))
+const ProfilePage = lazy(() => import('./frontend/pages/ProfilePage'))
+const DocumentsPage = lazy(() => import('./frontend/pages/DocumentsPage'))
+const ApplicationsPage = lazy(() => import('./frontend/pages/ApplicationsPage'))
+const OnboardingPage = lazy(() => import('./frontend/pages/OnboardingPage'))
 const UiKitPage = lazy(() => import('./frontend/pages/UiKitPage'))
 const GuestRoute = lazy(() => import('./frontend/components/GuestRoute'))
 const ProtectedRoute = lazy(() => import('./frontend/components/ProtectedRoute'))
@@ -37,9 +42,17 @@ export const router = createBrowserRouter([
         path: '/app',
         element: <ProtectedRoute />,
         children: [
+          // Onboarding is protected but rendered outside the app shell.
+          { path: 'onboarding', element: <OnboardingPage /> },
           {
             element: <AppLayout />,
-            children: [{ index: true, element: <DashboardPage /> }],
+            children: [
+              { index: true, element: <DashboardPage /> },
+              { path: 'grants', element: <GrantsPage /> },
+              { path: 'profile', element: <ProfilePage /> },
+              { path: 'documents', element: <DocumentsPage /> },
+              { path: 'applications', element: <ApplicationsPage /> },
+            ],
           },
         ],
       },
