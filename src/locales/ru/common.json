@@ -150,6 +150,76 @@
       "titleRequired": "Введите название"
     }
   },
+  "grants": {
+    "searchPlaceholder": "Поиск по названию или организации",
+    "status": {
+      "eligible": "Подходит",
+      "borderline": "Пограничный",
+      "incomplete": "Добавьте данные",
+      "not_eligible": "Не подходит"
+    },
+    "pills": {
+      "all": "Все",
+      "eligible": "Подходящие",
+      "borderline": "Пограничные",
+      "incomplete": "Неполные",
+      "not_eligible": "Неподходящие"
+    },
+    "filters": {
+      "country": "Страна",
+      "degree": "Уровень обучения",
+      "funding": "Финансирование",
+      "all": "Все"
+    },
+    "sort": {
+      "best": "Лучшее совпадение",
+      "deadline": "Ближайший срок",
+      "name": "Название от А до Я"
+    },
+    "funding": {
+      "full": "Полное финансирование",
+      "partial": "Частичное финансирование",
+      "one_time": "Разовая выплата"
+    },
+    "deadline": {
+      "rolling": "Бессрочный приём",
+      "passed": "Срок прошёл",
+      "line": "Срок {{date}} · осталось {{days}} дней",
+      "daysLeft": "осталось {{days}} дней"
+    },
+    "criteria": {
+      "degree_level": "Уровень обучения",
+      "citizenship": "Гражданство",
+      "age": "Возраст",
+      "gpa": "GPA",
+      "english": "Языковой тест",
+      "sat": "SAT",
+      "volunteer_hours": "Часы волонтёрства"
+    },
+    "documents": {
+      "essay": "Эссе",
+      "recommendation": "Рекомендательное письмо"
+    },
+    "empty": {
+      "title": "Нет грантов по вашим фильтрам",
+      "reset": "Сбросить фильтры"
+    },
+    "detail": {
+      "back": "Все гранты",
+      "requirements": "Требования",
+      "requiredDocuments": "Необходимые документы",
+      "noDocuments": "Особые документы не указаны",
+      "required": "Требуется: {{value}}",
+      "you": "У вас: {{value}}",
+      "youNoData": "У вас: нет данных",
+      "website": "Сайт",
+      "addToApplications": "Добавить в заявки",
+      "inApplications": "В ваших заявках",
+      "notFound": "Грант не найден",
+      "alreadyAdded": "Этот грант уже в ваших заявках",
+      "addError": "Не удалось добавить грант. Попробуйте снова"
+    }
+  },
   "landing": {
     "hero": {
       "badge": "Платформа подбора грантов",

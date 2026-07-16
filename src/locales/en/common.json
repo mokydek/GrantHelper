@@ -150,6 +150,76 @@
       "titleRequired": "Enter a title"
     }
   },
+  "grants": {
+    "searchPlaceholder": "Search by name or provider",
+    "status": {
+      "eligible": "Eligible",
+      "borderline": "Borderline",
+      "incomplete": "Add more data",
+      "not_eligible": "Not eligible"
+    },
+    "pills": {
+      "all": "All",
+      "eligible": "Eligible",
+      "borderline": "Borderline",
+      "incomplete": "Incomplete",
+      "not_eligible": "Not eligible"
+    },
+    "filters": {
+      "country": "Country",
+      "degree": "Degree level",
+      "funding": "Funding",
+      "all": "All"
+    },
+    "sort": {
+      "best": "Best match",
+      "deadline": "Deadline soonest",
+      "name": "Name A to Z"
+    },
+    "funding": {
+      "full": "Full funding",
+      "partial": "Partial funding",
+      "one_time": "One time"
+    },
+    "deadline": {
+      "rolling": "Rolling deadline",
+      "passed": "Deadline passed",
+      "line": "Deadline {{date}} · {{days}} days left",
+      "daysLeft": "{{days}} days left"
+    },
+    "criteria": {
+      "degree_level": "Degree level",
+      "citizenship": "Citizenship",
+      "age": "Age",
+      "gpa": "GPA",
+      "english": "English test",
+      "sat": "SAT",
+      "volunteer_hours": "Volunteer hours"
+    },
+    "documents": {
+      "essay": "Essay",
+      "recommendation": "Recommendation letter"
+    },
+    "empty": {
+      "title": "No grants match your filters",
+      "reset": "Reset filters"
+    },
+    "detail": {
+      "back": "All grants",
+      "requirements": "Requirements",
+      "requiredDocuments": "Required documents",
+      "noDocuments": "No specific documents listed",
+      "required": "Required: {{value}}",
+      "you": "You: {{value}}",
+      "youNoData": "You: no data",
+      "website": "Website",
+      "addToApplications": "Add to applications",
+      "inApplications": "In your applications",
+      "notFound": "Grant not found",
+      "alreadyAdded": "This grant is already in your applications",
+      "addError": "Could not add the grant. Please try again"
+    }
+  },
   "landing": {
     "hero": {
       "badge": "Grant matching platform",
