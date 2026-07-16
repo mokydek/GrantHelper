@@ -24,6 +24,16 @@
     "en": "English",
     "ru": "Русский"
   },
+  "dashboard": {
+    "matches": {
+      "title": "Ваши совпадения",
+      "eligibleLabel": "подходящих",
+      "borderlineLabel": "пограничных",
+      "of": "из",
+      "grantsLabel": "грантов",
+      "comingSoon": "Полный список скоро"
+    }
+  },
   "auth": {
     "emailLabel": "Электронная почта",
     "passwordLabel": "Пароль",

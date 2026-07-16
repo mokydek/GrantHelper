@@ -24,6 +24,16 @@
     "en": "English",
     "ru": "Русский"
   },
+  "dashboard": {
+    "matches": {
+      "title": "Your matches",
+      "eligibleLabel": "eligible",
+      "borderlineLabel": "borderline",
+      "of": "of",
+      "grantsLabel": "grants",
+      "comingSoon": "Full list coming soon"
+    }
+  },
   "auth": {
     "emailLabel": "Email",
     "passwordLabel": "Password",
