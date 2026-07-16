@@ -15,9 +15,12 @@ import '@fontsource/ibm-plex-mono/500.css'
 import './index.css'
 import './lib/i18n'
 import { router } from './router'
+import { AuthProvider } from './frontend/providers/AuthProvider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

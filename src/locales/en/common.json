@@ -24,6 +24,25 @@
     "en": "English",
     "ru": "Русский"
   },
+  "auth": {
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "fullNameLabel": "Full name",
+    "signInButton": "Sign in",
+    "signUpButton": "Create account",
+    "loginLink": "No account yet? Create one",
+    "signupLink": "Already have an account? Sign in",
+    "signedInAs": "Signed in as {{email}}",
+    "errors": {
+      "email": "Enter a valid email address",
+      "password": "Password must be at least 8 characters",
+      "fullName": "Enter your full name",
+      "invalidCredentials": "The email or password is incorrect",
+      "userExists": "An account with this email already exists",
+      "weakPassword": "Choose a stronger password with at least 8 characters",
+      "generic": "Something went wrong. Please try again"
+    }
+  },
   "landing": {
     "hero": {
       "badge": "Grant matching platform",
