@@ -25,13 +25,71 @@
     "ru": "Русский"
   },
   "dashboard": {
-    "matches": {
-      "title": "Ваши совпадения",
-      "eligibleLabel": "подходящих",
-      "borderlineLabel": "пограничных",
-      "of": "из",
-      "grantsLabel": "грантов",
-      "comingSoon": "Полный список скоро"
+    "welcome": "С возвращением, {{name}}",
+    "welcomeNoName": "С возвращением",
+    "stats": {
+      "profileStrength": "Сила профиля",
+      "eligibleGrants": "Подходящие гранты",
+      "activeApplications": "Активные заявки",
+      "nearestDeadline": "Ближайший срок"
+    },
+    "days": "дней",
+    "topMatches": {
+      "title": "Лучшие совпадения",
+      "viewAll": "Все гранты",
+      "hint": "Заполните профиль, чтобы открыть больше совпадений"
+    },
+    "upcomingDeadlines": {
+      "title": "Ближайшие сроки",
+      "empty": "Нет ближайших сроков"
+    },
+    "completeProfile": {
+      "title": "Заполните профиль",
+      "complete": "Ваш профиль заполнен",
+      "missing": {
+        "basics": "Добавьте основные данные",
+        "gpa": "Добавьте GPA",
+        "english_test": "Добавьте балл языкового теста",
+        "academic_test": "Добавьте SAT или другой академический тест",
+        "activities": "Добавьте хотя бы одну активность"
+      }
+    }
+  },
+  "applications": {
+    "sections": {
+      "planned": "Запланировано",
+      "in_progress": "В процессе",
+      "submitted": "Отправлено",
+      "results": "Результаты"
+    },
+    "status": {
+      "planned": "Запланировано",
+      "in_progress": "В процессе",
+      "submitted": "Отправлено",
+      "accepted": "Принято",
+      "rejected": "Отклонено"
+    },
+    "deadline": {
+      "passed": "Срок прошёл",
+      "rolling": "Бессрочно",
+      "line": "{{date}} · осталось {{days}} дней"
+    },
+    "notes": {
+      "toggle": "Заметки",
+      "placeholder": "Добавьте заметки",
+      "save": "Сохранить",
+      "saved": "Сохранено"
+    },
+    "remove": {
+      "toggle": "Удалить",
+      "confirm": "Удалить эту заявку?",
+      "cancel": "Отмена",
+      "remove": "Удалить"
+    },
+    "statusError": "Не удалось обновить статус. Попробуйте снова",
+    "empty": {
+      "title": "Пока нет заявок",
+      "browse": "Смотреть гранты"
     }
   },
   "auth": {

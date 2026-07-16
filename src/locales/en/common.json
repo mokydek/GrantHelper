@@ -25,13 +25,71 @@
     "ru": "Русский"
   },
   "dashboard": {
-    "matches": {
-      "title": "Your matches",
-      "eligibleLabel": "eligible",
-      "borderlineLabel": "borderline",
-      "of": "of",
-      "grantsLabel": "grants",
-      "comingSoon": "Full list coming soon"
+    "welcome": "Welcome back, {{name}}",
+    "welcomeNoName": "Welcome back",
+    "stats": {
+      "profileStrength": "Profile strength",
+      "eligibleGrants": "Eligible grants",
+      "activeApplications": "Active applications",
+      "nearestDeadline": "Nearest deadline"
+    },
+    "days": "days",
+    "topMatches": {
+      "title": "Top matches",
+      "viewAll": "View all grants",
+      "hint": "Complete your profile to unlock more matches"
+    },
+    "upcomingDeadlines": {
+      "title": "Upcoming deadlines",
+      "empty": "No upcoming deadlines"
+    },
+    "completeProfile": {
+      "title": "Complete your profile",
+      "complete": "Your profile is complete",
+      "missing": {
+        "basics": "Add your basic details",
+        "gpa": "Add your GPA",
+        "english_test": "Add an English test score",
+        "academic_test": "Add SAT or another academic test",
+        "activities": "Add at least one activity"
+      }
+    }
+  },
+  "applications": {
+    "sections": {
+      "planned": "Planned",
+      "in_progress": "In progress",
+      "submitted": "Submitted",
+      "results": "Results"
+    },
+    "status": {
+      "planned": "Planned",
+      "in_progress": "In progress",
+      "submitted": "Submitted",
+      "accepted": "Accepted",
+      "rejected": "Rejected"
+    },
+    "deadline": {
+      "passed": "Deadline passed",
+      "rolling": "Rolling",
+      "line": "{{date}} · {{days}} days left"
+    },
+    "notes": {
+      "toggle": "Notes",
+      "placeholder": "Add notes",
+      "save": "Save",
+      "saved": "Saved"
+    },
+    "remove": {
+      "toggle": "Delete",
+      "confirm": "Remove this application?",
+      "cancel": "Cancel",
+      "remove": "Remove"
+    },
+    "statusError": "Could not update the status. Please try again",
+    "empty": {
+      "title": "No applications yet",
+      "browse": "Browse grants"
     }
   },
   "auth": {

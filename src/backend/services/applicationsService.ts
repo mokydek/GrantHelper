@@ -1,6 +1,6 @@
 import { supabase } from '../supabaseClient'
 import { getUserId } from './session'
-import type { Application } from '../types/database'
+import type { Application, ApplicationStatus } from '../types/database'
 
 export type ApplicationErrorCode = 'already_exists' | 'unknown'
 
@@ -15,23 +15,22 @@ export class ApplicationError extends Error {
 }
 
 export interface ApplicationWithGrant extends Application {
-  grant_name: string | null
+  grant: {
+    id: string
+    name: string
+    provider: string
+    country: string
+    deadline: string | null
+  } | null
 }
 
 export async function listMyApplications(): Promise<ApplicationWithGrant[]> {
   const { data, error } = await supabase
     .from('applications')
-    .select('*, grants(name)')
+    .select('*, grant:grants(id, name, provider, country, deadline)')
     .order('created_at', { ascending: false })
   if (error) throw error
-
-  const rows = (data ?? []) as Array<
-    Application & { grants: { name: string } | null }
-  >
-  return rows.map(({ grants, ...rest }) => ({
-    ...rest,
-    grant_name: grants?.name ?? null,
-  }))
+  return (data ?? []) as ApplicationWithGrant[]
 }
 
 export async function createApplication(
@@ -51,6 +50,26 @@ export async function createApplication(
     throw error
   }
   return { data: data as Application }
+}
+
+export async function updateApplication(
+  id: string,
+  patch: { status?: ApplicationStatus; notes?: string | null },
+): Promise<{ data: Application }> {
+  const { data, error } = await supabase
+    .from('applications')
+    .update({ ...patch, updated_at: new Date().toISOString() })
+    .eq('id', id)
+    .select()
+    .single()
+  if (error) throw error
+  return { data: data as Application }
+}
+
+export async function deleteApplication(id: string): Promise<{ data: null }> {
+  const { error } = await supabase.from('applications').delete().eq('id', id)
+  if (error) throw error
+  return { data: null }
 }
 
 export async function getMyApplicationByGrantId(
